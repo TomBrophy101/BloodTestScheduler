@@ -256,8 +256,8 @@ public class OilSpillPage extends javax.swing.JFrame {
         String causeOfSpill = causeOfSpillTF.getText();
         String companyResponsible = companyResponsibleTF.getText();
 
-        // Create a new WastedPlastic object
-        //WastedPlastic wastedPlastic = new WastedPlastic(turtlesAffected, dolphinsAffected, damageCosts, location, amountDumped, typeOfDebris, cleanUpPartner);
+        // Create a new OilSpill object
+        //OillSpill wastedPlastic = new WastedPlastic(turtlesAffected, dolphinsAffected, damageCosts, location, amountDumped, typeOfDebris, cleanUpPartner);
         OilSpill oilSpill = new OilSpill(litresSpilt, causeOfSpill, companyResponsible, turtlesAffected, dolphinsAffected, damageCosts, location);
         
         slist.add(oilSpill);
