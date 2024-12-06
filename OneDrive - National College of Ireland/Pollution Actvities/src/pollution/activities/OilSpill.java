@@ -19,6 +19,8 @@ public class OilSpill extends PollutionActivities {
         this.causeOfSpill = causeOfSpill;
         this.companyResponsible = companyResponsible;
     }
+    
+    
 
     public int getLitresSpilt() {
         return litresSpilt;
@@ -45,7 +47,7 @@ public class OilSpill extends PollutionActivities {
     }
     
     @Override
-    public String printDetails(){
-        return super.printDetails() + ", Litres Spilt: " + litresSpilt + ", Cause of Spill: " + causeOfSpill + ", Company Responsible: " + companyResponsible;
+    public String toString(){
+        return "Turtles Affected: " + getTurtlesAffected() + ", Dolphins Affected: " + getDolphinsAffected() + ", Damage Costs: " + getDamageCosts() + ", Location: " + getLocation() + ", Litres Spilt: " + litresSpilt + ", Cause of Spill: " + causeOfSpill + ", Company Responsible: " + companyResponsible;
     }
 }

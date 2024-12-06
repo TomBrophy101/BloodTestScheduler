@@ -91,48 +91,53 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="addBTN" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
+                          <Component id="viewBTN" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="deleteBTN" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="companyResponsibleLBL" min="-2" pref="144" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="companyResponsibleTF" min="-2" pref="142" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <Component id="turtlesAffectedLBL" min="-2" pref="114" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
+                          <Component id="turtlesAffectedTF" min="-2" pref="145" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="dolphinsAffectedLBL" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
+                              <Component id="damageCostsLBL" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="locationLBL" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                              <Component id="litresSpiltLBL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="43" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="companyResponsibleLBL" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="companyResponsibleTF" min="-2" pref="142" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="turtlesAffectedLBL" min="-2" pref="114" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="73" max="-2" attributes="0"/>
-                                  <Component id="turtlesAffectedTF" min="-2" pref="145" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="dolphinsAffectedLBL" alignment="0" min="-2" pref="114" max="-2" attributes="0"/>
-                                      <Component id="damageCostsLBL" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                      <Component id="locationLBL" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                                      <Component id="litresSpiltLBL" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="43" max="32767" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="litresSpiltTF" max="32767" attributes="0"/>
-                                      <Component id="dolphinsAffectedTF" pref="145" max="32767" attributes="0"/>
-                                      <Component id="damageCostsTF" max="32767" attributes="0"/>
-                                      <Component id="locationTF" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="causeOfSpillLBL" min="-2" pref="144" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="causeOfSpillTF" min="-2" pref="145" max="-2" attributes="0"/>
-                              </Group>
+                              <Component id="litresSpiltTF" max="32767" attributes="0"/>
+                              <Component id="dolphinsAffectedTF" pref="145" max="32767" attributes="0"/>
+                              <Component id="damageCostsTF" max="32767" attributes="0"/>
+                              <Component id="locationTF" max="32767" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="pollutionActivitesBTN" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="causeOfSpillLBL" min="-2" pref="144" max="-2" attributes="0"/>
+                          <EmptySpace max="32767" attributes="0"/>
+                          <Component id="causeOfSpillTF" min="-2" pref="145" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jScrollPane1" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace pref="23" max="32767" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace max="32767" attributes="0"/>
+                  <Component id="pollutionActivitesBTN" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="128" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -174,9 +179,17 @@
                       <Component id="companyResponsibleLBL" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="companyResponsibleTF" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="addBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="viewBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="deleteBTN" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Component id="jScrollPane1" pref="173" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="pollutionActivitesBTN" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -260,6 +273,45 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pollutionActivitesBTNActionPerformed"/>
           </Events>
         </Component>
+        <Component class="javax.swing.JButton" name="addBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ADD"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBTNActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="viewBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="VIEW"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewBTNActionPerformed"/>
+          </Events>
+        </Component>
+        <Component class="javax.swing.JButton" name="deleteBTN">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DELETE"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="deleteBTNActionPerformed"/>
+          </Events>
+        </Component>
+        <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+          <AuxValues>
+            <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+          </AuxValues>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JTextArea" name="oilSpillTA">
+              <Properties>
+                <Property name="columns" type="int" value="20"/>
+                <Property name="rows" type="int" value="5"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

@@ -4,12 +4,14 @@
  */
 package pollution.activities;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author tombr
  */
 public class OilSpillPage extends javax.swing.JFrame {
-
+    ArrayList <OilSpill> slist = new ArrayList<>();
     /**
      * Creates new form OilSpillPage
      */
@@ -44,6 +46,11 @@ public class OilSpillPage extends javax.swing.JFrame {
         companyResponsibleLBL = new javax.swing.JLabel();
         companyResponsibleTF = new javax.swing.JTextField();
         pollutionActivitesBTN = new javax.swing.JButton();
+        addBTN = new javax.swing.JButton();
+        viewBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        oilSpillTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 255));
@@ -101,43 +108,74 @@ public class OilSpillPage extends javax.swing.JFrame {
             }
         });
 
+        addBTN.setText("ADD");
+        addBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTNActionPerformed(evt);
+            }
+        });
+
+        viewBTN.setText("VIEW");
+        viewBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBTNActionPerformed(evt);
+            }
+        });
+
+        deleteBTN.setText("DELETE");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
+
+        oilSpillTA.setColumns(20);
+        oilSpillTA.setRows(5);
+        jScrollPane1.setViewportView(oilSpillTA);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(45, 45, 45)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(45, 45, 45)
+                        .addComponent(addBTN)
+                        .addGap(57, 57, 57)
+                        .addComponent(viewBTN)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(deleteBTN))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(companyResponsibleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(companyResponsibleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(turtlesAffectedLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(73, 73, 73)
+                        .addComponent(turtlesAffectedTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dolphinsAffectedLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(damageCostsLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(locationLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(litresSpiltLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(companyResponsibleLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(companyResponsibleTF, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(turtlesAffectedLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(73, 73, 73)
-                                .addComponent(turtlesAffectedTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(dolphinsAffectedLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(damageCostsLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(locationLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(litresSpiltLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(litresSpiltTF)
-                                    .addComponent(dolphinsAffectedTF, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                                    .addComponent(damageCostsTF)
-                                    .addComponent(locationTF)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(causeOfSpillLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(causeOfSpillTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(litresSpiltTF)
+                            .addComponent(dolphinsAffectedTF, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
+                            .addComponent(damageCostsTF)
+                            .addComponent(locationTF)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pollutionActivitesBTN)))
+                        .addComponent(causeOfSpillLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 144, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(causeOfSpillTF, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1))
                 .addContainerGap(23, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pollutionActivitesBTN)
+                .addGap(128, 128, 128))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -170,9 +208,16 @@ public class OilSpillPage extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(companyResponsibleLBL)
                     .addComponent(companyResponsibleTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addGap(34, 34, 34)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBTN)
+                    .addComponent(viewBTN)
+                    .addComponent(deleteBTN))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pollutionActivitesBTN)
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -200,6 +245,53 @@ public class OilSpillPage extends javax.swing.JFrame {
         System.out.println("closed");
         this.dispose();
     }//GEN-LAST:event_pollutionActivitesBTNActionPerformed
+
+    private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
+        // TODO add your handling code here:
+        int turtlesAffected = Integer.parseInt(turtlesAffectedTF.getText());
+        int dolphinsAffected = Integer.parseInt(dolphinsAffectedTF.getText());
+        int damageCosts = Integer.parseInt(damageCostsTF.getText());
+        String location = locationTF.getText();
+        int litresSpilt = Integer.parseInt(litresSpiltTF.getText());
+        String causeOfSpill = causeOfSpillTF.getText();
+        String companyResponsible = companyResponsibleTF.getText();
+
+        // Create a new WastedPlastic object
+        //WastedPlastic wastedPlastic = new WastedPlastic(turtlesAffected, dolphinsAffected, damageCosts, location, amountDumped, typeOfDebris, cleanUpPartner);
+        OilSpill oilSpill = new OilSpill(litresSpilt, causeOfSpill, companyResponsible, turtlesAffected, dolphinsAffected, damageCosts, location);
+        
+        slist.add(oilSpill);
+        
+        oilSpillTA.append(oilSpill.toString() + "\n");
+    }//GEN-LAST:event_addBTNActionPerformed
+
+    private void viewBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBTNActionPerformed
+        // TODO add your handling code here:
+        oilSpillTA.setText(""); // Clear the text area before appending new content
+        if (slist.isEmpty()) {
+            oilSpillTA.append("No data to display.\n");
+        } else {
+            for (OilSpill oilSpill : slist) {
+                oilSpillTA.append(oilSpill.toString() + "\n\n"); // Assuming OilSpill class has a toString() method
+            }
+        }
+    }//GEN-LAST:event_viewBTNActionPerformed
+
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        if(slist.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Nothing in system");
+        } else {
+            String searchTerm = JOptionPane.showInputDialog(null, "Enter name");
+            for(int i = 0; i < slist.size(); i++) {
+                OilSpill temp = slist.get(i);
+                if(temp.getCompanyResponsible().equalsIgnoreCase(searchTerm)){
+                    slist.remove(i);
+                    JOptionPane.showMessageDialog(null, "It's gone now");
+                }
+            }
+        }
+    }//GEN-LAST:event_deleteBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -237,23 +329,28 @@ public class OilSpillPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBTN;
     private javax.swing.JLabel causeOfSpillLBL;
     private javax.swing.JTextField causeOfSpillTF;
     private javax.swing.JLabel companyResponsibleLBL;
     private javax.swing.JTextField companyResponsibleTF;
     private javax.swing.JLabel damageCostsLBL;
     private javax.swing.JTextField damageCostsTF;
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JLabel dolphinsAffectedLBL;
     private javax.swing.JTextField dolphinsAffectedTF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel litresSpiltLBL;
     private javax.swing.JTextField litresSpiltTF;
     private javax.swing.JLabel locationLBL;
     private javax.swing.JTextField locationTF;
     private javax.swing.JLabel oilSpillPageBTN;
+    private javax.swing.JTextArea oilSpillTA;
     private javax.swing.JButton pollutionActivitesBTN;
     private javax.swing.JLabel turtlesAffectedLBL;
     private javax.swing.JTextField turtlesAffectedTF;
+    private javax.swing.JButton viewBTN;
     // End of variables declaration//GEN-END:variables
 }

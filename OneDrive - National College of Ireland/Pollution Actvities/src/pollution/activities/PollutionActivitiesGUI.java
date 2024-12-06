@@ -48,17 +48,17 @@ public class PollutionActivitiesGUI extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(127, 127, 127)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(122, Short.MAX_VALUE)
                 .addComponent(PollutionActivitiesLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 260, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addGap(118, 118, 118))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(19, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(PollutionActivitiesLBL)
-                .addContainerGap())
+                .addContainerGap(19, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 255, 255));
@@ -97,23 +97,23 @@ public class PollutionActivitiesGUI extends javax.swing.JFrame {
                         .addGap(193, 193, 193)
                         .addComponent(oilSpillPageBTN))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
+                        .addGap(169, 169, 169)
                         .addComponent(wastedPlasticPageBTN))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(209, 209, 209)
+                        .addGap(213, 213, 213)
                         .addComponent(exitBTN)))
-                .addContainerGap(174, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addGap(50, 50, 50)
                 .addComponent(oilSpillPageBTN)
-                .addGap(45, 45, 45)
+                .addGap(39, 39, 39)
                 .addComponent(wastedPlasticPageBTN)
-                .addGap(35, 35, 35)
+                .addGap(37, 37, 37)
                 .addComponent(exitBTN)
-                .addContainerGap(58, Short.MAX_VALUE))
+                .addContainerGap(62, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

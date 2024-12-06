@@ -4,12 +4,14 @@
  */
 package pollution.activities;
 
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author tombr
  */
 public class WastedPlasticPage extends javax.swing.JFrame {
-
+    ArrayList <WastedPlastic> plist = new ArrayList<>();
     /**
      * Creates new form WastedPlasticPage
      */
@@ -27,7 +29,7 @@ public class WastedPlasticPage extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        wastedPlasticPageBTN = new javax.swing.JLabel();
+        wastedPlasticPageLBL = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         dolphinsAffectedLBL = new javax.swing.JLabel();
         dolphinsAffectedTF = new javax.swing.JTextField();
@@ -44,15 +46,20 @@ public class WastedPlasticPage extends javax.swing.JFrame {
         cleanUpPartnerLBL = new javax.swing.JLabel();
         cleanUpPartnerTF = new javax.swing.JTextField();
         pollutionActivitiesBTN = new javax.swing.JButton();
+        addBTN = new javax.swing.JButton();
+        viewBTN = new javax.swing.JButton();
+        deleteBTN = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        wastedPlasticTA = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(0, 255, 255));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 0));
 
-        wastedPlasticPageBTN.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        wastedPlasticPageBTN.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        wastedPlasticPageBTN.setText("Wasted Plastic Page");
+        wastedPlasticPageLBL.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        wastedPlasticPageLBL.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        wastedPlasticPageLBL.setText("Wasted Plastic Page");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -60,14 +67,14 @@ public class WastedPlasticPage extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(100, 100, 100)
-                .addComponent(wastedPlasticPageBTN, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(wastedPlasticPageLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(19, 19, 19)
-                .addComponent(wastedPlasticPageBTN)
+                .addComponent(wastedPlasticPageLBL)
                 .addContainerGap(20, Short.MAX_VALUE))
         );
 
@@ -101,6 +108,31 @@ public class WastedPlasticPage extends javax.swing.JFrame {
             }
         });
 
+        addBTN.setText("ADD");
+        addBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addBTNActionPerformed(evt);
+            }
+        });
+
+        viewBTN.setText("VIEW");
+        viewBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewBTNActionPerformed(evt);
+            }
+        });
+
+        deleteBTN.setText("DELETE");
+        deleteBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                deleteBTNActionPerformed(evt);
+            }
+        });
+
+        wastedPlasticTA.setColumns(20);
+        wastedPlasticTA.setRows(5);
+        jScrollPane1.setViewportView(wastedPlasticTA);
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -108,8 +140,17 @@ public class WastedPlasticPage extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(pollutionActivitiesBTN))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(45, 45, 45)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(addBTN)
+                                .addGap(52, 52, 52)
+                                .addComponent(viewBTN)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(deleteBTN))
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(typeOfDebrisLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -135,10 +176,8 @@ public class WastedPlasticPage extends javax.swing.JFrame {
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addComponent(cleanUpPartnerLBL, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(58, 58, 58)
-                                .addComponent(cleanUpPartnerTF))))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(pollutionActivitiesBTN)))
+                                .addComponent(cleanUpPartnerTF))
+                            .addComponent(jScrollPane1))))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -172,9 +211,16 @@ public class WastedPlasticPage extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cleanUpPartnerLBL)
                     .addComponent(cleanUpPartnerTF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 90, Short.MAX_VALUE)
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addBTN)
+                    .addComponent(viewBTN)
+                    .addComponent(deleteBTN))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 173, Short.MAX_VALUE)
+                .addGap(12, 12, 12)
                 .addComponent(pollutionActivitiesBTN)
-                .addGap(14, 14, 14))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -189,7 +235,8 @@ public class WastedPlasticPage extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,6 +249,55 @@ public class WastedPlasticPage extends javax.swing.JFrame {
         System.out.println("closed");
         this.dispose();
     }//GEN-LAST:event_pollutionActivitiesBTNActionPerformed
+
+    private void deleteBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_deleteBTNActionPerformed
+        // TODO add your handling code here:
+        if(plist.isEmpty()){
+            JOptionPane.showMessageDialog(null, "Nothing in system");
+        } else {
+            String searchTerm = JOptionPane.showInputDialog(null, "Enter name");
+            for(int i = 0; i < plist.size(); i++) {
+                WastedPlastic temp = plist.get(i);
+                if(temp.getCleanUpPartner().equalsIgnoreCase(searchTerm)){
+                    plist.remove(i);
+                    JOptionPane.showMessageDialog(null, "It's gone now");
+                }
+            }
+        }
+    }//GEN-LAST:event_deleteBTNActionPerformed
+
+    private void addBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBTNActionPerformed
+        // TODO add your handling code here:  
+        int turtlesAffected = Integer.parseInt(turtlesAffectedTF.getText());
+        int dolphinsAffected = Integer.parseInt(dolphinsAffectedTF.getText());
+        int damageCosts = Integer.parseInt(damageCostsTF.getText());
+        String location = locationTF.getText();
+        int amountDumped = Integer.parseInt(amountDumpedTF.getText());
+        String typeOfDebris = typeOfDebrisTF.getText();
+        String cleanUpPartner = cleanUpPartnerTF.getText();
+
+        // Create a new WastedPlastic object
+        //WastedPlastic wastedPlastic = new WastedPlastic(turtlesAffected, dolphinsAffected, damageCosts, location, amountDumped, typeOfDebris, cleanUpPartner);
+        WastedPlastic wastedPlastic = new WastedPlastic(amountDumped, typeOfDebris, cleanUpPartner, turtlesAffected, dolphinsAffected, damageCosts, location);
+
+        // Add the object to the list
+        plist.add(wastedPlastic);
+            
+            
+        wastedPlasticTA.append(wastedPlastic.toString() + "\n");
+    }//GEN-LAST:event_addBTNActionPerformed
+
+    private void viewBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBTNActionPerformed
+        // TODO add your handling code here:
+        wastedPlasticTA.setText(""); // Clear the text area before appending new content
+        if (plist.isEmpty()) {
+            wastedPlasticTA.append("No data to display.\n");
+        } else {
+            for (WastedPlastic wastedPlastic : plist) {
+                wastedPlasticTA.append(wastedPlastic.toString() + "\n\n"); // Assuming WastedPlastic class has a toString() method
+            }
+        }
+    }//GEN-LAST:event_viewBTNActionPerformed
 
     /**
      * @param args the command line arguments
@@ -239,16 +335,19 @@ public class WastedPlasticPage extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addBTN;
     private javax.swing.JLabel amountDumpedLBL;
     private javax.swing.JTextField amountDumpedTF;
     private javax.swing.JLabel cleanUpPartnerLBL;
     private javax.swing.JTextField cleanUpPartnerTF;
     private javax.swing.JLabel damageCostsLBL;
     private javax.swing.JTextField damageCostsTF;
+    private javax.swing.JButton deleteBTN;
     private javax.swing.JLabel dolphinsAffectedLBL;
     private javax.swing.JTextField dolphinsAffectedTF;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel locationLBL;
     private javax.swing.JTextField locationTF;
     private javax.swing.JButton pollutionActivitiesBTN;
@@ -256,6 +355,8 @@ public class WastedPlasticPage extends javax.swing.JFrame {
     private javax.swing.JTextField turtlesAffectedTF;
     private javax.swing.JLabel typeOfDebrisLBL;
     private javax.swing.JTextField typeOfDebrisTF;
-    private javax.swing.JLabel wastedPlasticPageBTN;
+    private javax.swing.JButton viewBTN;
+    private javax.swing.JLabel wastedPlasticPageLBL;
+    private javax.swing.JTextArea wastedPlasticTA;
     // End of variables declaration//GEN-END:variables
 }

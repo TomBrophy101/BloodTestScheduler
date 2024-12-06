@@ -31,21 +31,10 @@ public class WastedPlastic extends PollutionActivities {
     public String getCleanUpPartner() {
         return cleanUpPartner;
     }
-
-    public void setAmountDumped(int amountDumped) {
-        this.amountDumped = amountDumped;
-    }
-
-    public void setTypeOfDebris(String typeOfDebris) {
-        this.typeOfDebris = typeOfDebris;
-    }
-
-    public void setCleanUpPartner(String cleanUpPartner) {
-        this.cleanUpPartner = cleanUpPartner;
-    }
     
     @Override
-    public String printDetails(){
-        return super.printDetails() + ", Amount Dumped: " + amountDumped + ", Type of Debris: " + typeOfDebris + ", Clean Up Partner: " + cleanUpPartner;
+    public String toString() {
+        return "Turtles Affected: " + getTurtlesAffected() + ", Dolphins Affected: " + getDolphinsAffected() + ", Damage Costs: " + getDamageCosts() + ", Location: " + getLocation() + ", Amount Dumped: " + getAmountDumped() + ", Type Of Debris: " + getTypeOfDebris() + ", Clean Up Partner: " + getCleanUpPartner();
     }
+
 }
