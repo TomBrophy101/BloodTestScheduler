@@ -285,6 +285,7 @@ public class WastedPlasticPage extends javax.swing.JFrame {
             
             
         wastedPlasticTA.append(wastedPlastic.toString() + "\n");
+        
     }//GEN-LAST:event_addBTNActionPerformed
 
     private void viewBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewBTNActionPerformed
