@@ -23,12 +23,12 @@ public abstract class Patient implements BloodTestInterface, Comparable<Patient>
         this.fromWard = fromWard;
     }
     
-    @Override
+    
     public String getName() {
         return name;
     }
 
-    @Override
+    
     public String getGPDetails() {
         return GPDetails;
     }
@@ -38,7 +38,7 @@ public abstract class Patient implements BloodTestInterface, Comparable<Patient>
         return Priority;
     }
     
-    @Override
+   
     public int getAge(){
         return age;
     }
