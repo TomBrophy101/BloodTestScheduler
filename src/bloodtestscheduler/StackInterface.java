@@ -9,5 +9,12 @@ package bloodtestscheduler;
  * @author tombr
  */
 public interface StackInterface {
+    public void push();
+    public Object pop();
+    public Object peek();
     
+    public boolean isEmpty();
+    public int size();
+    public String displayStack();
+    public String emptyStack();
 }
