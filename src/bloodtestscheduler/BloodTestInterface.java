@@ -13,4 +13,6 @@ public interface BloodTestInterface {
     public String getGPDetails();
     public int getAge();
     public Priority getPriority();
+    public void enqueue(Patient patient);
+    public Object dequeue();
 }

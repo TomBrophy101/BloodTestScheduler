@@ -12,7 +12,7 @@ import java.util.PriorityQueue;
  */
 public class MyBloodTestScheduler implements BloodTestInterface {
     
-    private static PriorityQueue<Patient> patientQueue;
+    private PriorityQueue<Patient> patientQueue;
 
     public MyBloodTestScheduler() {
         patientQueue = new PriorityQueue<>();
@@ -33,7 +33,7 @@ public class MyBloodTestScheduler implements BloodTestInterface {
         }
         StringBuilder sb = new StringBuilder("Current PatientQueue:\n");
         for (Patient p : patientQueue) {
-            sb.append(p.getName()).append(" - ").append(p.getPriority()).append("\n");
+            sb.append(p.getName()).append(" - ").append(p.getPriority()).append(" - ").append(p.getAge()).append("\n");
         }
         return sb.toString();
     }
@@ -56,5 +56,16 @@ public class MyBloodTestScheduler implements BloodTestInterface {
     @Override
     public Priority getPriority(){
         return Priority.Urgent;
+    }
+    
+    
+    @Override
+    public void enqueue(Patient patient){
+        patientQueue.add((Patient) patient);
+    }
+    
+    @Override
+    public Object dequeue(){
+        return patientQueue.remove(0);
     }
 }
