@@ -38,17 +38,15 @@ public class MyBloodTestScheduler implements BloodTestInterface {
         return sb.toString();
     }
     
-    @Override
     public String getName(){
         return "Tom Brophy";
     }
     
-    @Override
     public String getGPDetails(){
         return "Dr Holmes, Luciana";
     }
     
-    @Override
+    
     public int getAge(){
         return 21;
     }

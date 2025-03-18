@@ -38,6 +38,7 @@ public abstract class Patient implements BloodTestInterface, Comparable<Patient>
         return Priority;
     }
     
+    @Override
     public int getAge(){
         return age;
     }

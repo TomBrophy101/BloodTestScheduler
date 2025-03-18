@@ -9,9 +9,6 @@ package bloodtestscheduler;
  * @author tombr
  */
 public interface BloodTestInterface {
-    public String getName();
-    public String getGPDetails();
-    public int getAge();
     public Priority getPriority();
     public void enqueue(Patient patient);
     public Object dequeue();
