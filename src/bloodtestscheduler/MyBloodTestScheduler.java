@@ -1,0 +1,60 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package bloodtestscheduler;
+
+import java.util.PriorityQueue;
+
+/**
+ *
+ * @author tombr
+ */
+public class MyBloodTestScheduler implements BloodTestInterface {
+    
+    private static PriorityQueue<Patient> patientQueue;
+
+    public MyBloodTestScheduler() {
+        patientQueue = new PriorityQueue<>();
+    }
+    
+    public void addPatient(Patient patient) {
+        patientQueue.add(patient);
+        System.out.println("Added patient: " + patient.getName() + " with priority " + patient.getPriority());
+    }
+    
+    public Patient getNextPatient() {
+        return patientQueue.poll();
+    }
+    
+    public String displayQueue(){
+        if(patientQueue.isEmpty()) {
+            return "No patients in queue";
+        }
+        StringBuilder sb = new StringBuilder("Current PatientQueue:\n");
+        for (Patient p : patientQueue) {
+            sb.append(p.getName()).append(" - ").append(p.getPriority()).append("\n");
+        }
+        return sb.toString();
+    }
+    
+    @Override
+    public String getName(){
+        return "Tom Brophy";
+    }
+    
+    @Override
+    public String getGPDetails(){
+        return "Dr Holmes, Luciana";
+    }
+    
+    @Override
+    public int getAge(){
+        return 21;
+    }
+    
+    @Override
+    public Priority getPriority(){
+        return Priority.Urgent;
+    }
+}
