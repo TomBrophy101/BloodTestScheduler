@@ -10,7 +10,7 @@ import java.util.PriorityQueue;
  *
  * @author tombr
  */
-public class MyBloodTestScheduler implements BloodTestInterface {
+public class MyBloodTestScheduler implements QueueInterface {
     
     private PriorityQueue<Patient> patientQueue;
 

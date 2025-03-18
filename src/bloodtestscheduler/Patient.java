@@ -8,7 +8,7 @@ package bloodtestscheduler;
  *
  * @author tombr
  */
-public abstract class Patient implements BloodTestInterface, Comparable<Patient>{
+public abstract class Patient implements QueueInterface, Comparable<Patient>{
     private String name;
     private int age;
     private String GPDetails;
