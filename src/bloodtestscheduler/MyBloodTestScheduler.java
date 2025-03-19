@@ -64,6 +64,6 @@ public class MyBloodTestScheduler implements QueueInterface {
     
     @Override
     public Object dequeue(){
-        return patientQueue.remove(0);
+        return patientQueue.remove();
     }
 }
