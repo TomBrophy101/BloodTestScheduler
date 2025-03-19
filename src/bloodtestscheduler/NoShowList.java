@@ -41,4 +41,19 @@ public abstract class NoShowList implements StackInterface {
     public int size(){
         return missedPatients.size();
     }
+    
+    @Override
+    public String displayStack(){
+        StringBuilder sb = new StringBuilder("No-Show Patients:\n");
+        for (Patient p : missedPatients) {
+            sb.append(p.getName()).append("\n");
+        }
+        return sb.toString();
+    }
+    
+    @Override
+    public String emptyStack(){
+        missedPatients.clear();
+        return "No-show stack cleared";
+    }
 }
