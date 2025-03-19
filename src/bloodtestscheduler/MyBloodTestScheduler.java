@@ -48,7 +48,7 @@ public class MyBloodTestScheduler implements QueueInterface {
     
     
     public int getAge(){
-        return 21;
+        return 23;
     }
     
     @Override
@@ -59,11 +59,8 @@ public class MyBloodTestScheduler implements QueueInterface {
     
     @Override
     public void enqueue(Patient patient){
-        patientQueue.add((Patient) patient);
+        patientQueue.add(patient);
     }
     
-    @Override
-    public Object dequeue(){
-        return patientQueue.remove();
-    }
+    
 }

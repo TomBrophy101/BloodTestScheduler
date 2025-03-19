@@ -12,14 +12,14 @@ public abstract class Patient implements QueueInterface, Comparable<Patient>{
     private String name;
     private int age;
     private String GPDetails;
-    private Priority Priority;
+    private Priority priority;
     private boolean fromWard;
 
     public Patient(String name, int age, String GPDetails, Priority Priority, boolean fromWard) {
         this.name = name;
         this.age = age;
         this.GPDetails = GPDetails;
-        this.Priority = Priority;
+        this.priority = Priority;
         this.fromWard = fromWard;
     }
     
@@ -27,23 +27,30 @@ public abstract class Patient implements QueueInterface, Comparable<Patient>{
     public String getName() {
         return name;
     }
-
     
-    public String getGPDetails() {
-        return GPDetails;
-    }
-
-    @Override
-    public Priority getPriority() {
-        return Priority;
-    }
-    
-   
     public int getAge(){
         return age;
     }
     
+    public String getGPDetails() {
+        return GPDetails;
+    }
+    
+    @Override
+    public Priority getPriority() {
+        return priority;
+    }
+    
+    
     public boolean isFromWard(){
         return fromWard;
     }
+    
+    @Override
+    public int compareTo(Patient other) {
+        return this.priority.compareTo(other.priority);
+    }
+    
+    @Override
+    public abstract void enqueue(Patient patient);
 }

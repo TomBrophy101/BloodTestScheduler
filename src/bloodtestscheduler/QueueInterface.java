@@ -12,5 +12,4 @@ public interface QueueInterface {
     
     public Priority getPriority();
     public void enqueue(Patient patient);
-    public Object dequeue();
 }

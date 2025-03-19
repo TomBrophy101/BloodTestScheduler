@@ -4,17 +4,26 @@
  */
 package bloodtestscheduler;
 
+import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author tombr
  */
 public class BloodTestSchedulerGUI extends javax.swing.JFrame {
-
+    Patient plist[];
+    private int count;
+    private DefaultListModel<String> queueModel;
     /**
      * Creates new form BloodTestSchedulerGUI
      */
     public BloodTestSchedulerGUI() {
         initComponents();
+        plist = new Patient[3];
+        count = -1;
+        patientNameTF.setVisible(false);
+        patientNameLBL.setVisible(false);
     }
 
     /**
@@ -61,6 +70,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
         patientNameTF.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         patientNameTF.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        patientNameTF.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                patientNameTFActionPerformed(evt);
+            }
+        });
 
         patientAgeLBL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         patientAgeLBL.setText("Patient Age:");
@@ -99,6 +113,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         wardRB.setBackground(new java.awt.Color(102, 255, 51));
         wardRB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         wardRB.setText("Ward");
+        wardRB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                wardRBActionPerformed(evt);
+            }
+        });
 
         noWardRB.setBackground(new java.awt.Color(102, 255, 51));
         noWardRB.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -106,6 +125,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
         addPatientBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         addPatientBTN.setText("Add Patient");
+        addPatientBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addPatientBTNActionPerformed(evt);
+            }
+        });
 
         nextPatientBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         nextPatientBTN.setText("Next Patient");
@@ -121,11 +145,6 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             }
         });
 
-        queueLST.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane1.setViewportView(queueLST);
 
         noShowLST.setModel(new javax.swing.AbstractListModel<String>() {
@@ -258,6 +277,32 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.exit(0);
     }//GEN-LAST:event_exitBTNActionPerformed
+
+    private void addPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addPatientBTNActionPerformed
+        // TODO add your handling code here:
+        String name = patientNameTF.getText().trim();
+        int age = Integer.parseInt(patientAgeTF.getText());
+        String GPDetails = GPDetailsTF.getText();
+        
+        Priority priority = Priority.Medium;
+        
+        boolean fromWard = wardRB.isSelected();
+        
+        Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
+        if(count < plist.length - 1){
+            plist[++count] = tempP;
+        } else {
+            JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_addPatientBTNActionPerformed
+
+    private void patientNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTFActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_patientNameTFActionPerformed
+
+    private void wardRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wardRBActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_wardRBActionPerformed
 
     /**
      * @param args the command line arguments
