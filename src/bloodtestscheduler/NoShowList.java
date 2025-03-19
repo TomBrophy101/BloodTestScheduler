@@ -10,7 +10,7 @@ import java.util.LinkedList;
  *
  * @author tombr
  */
-public abstract class NoShowList implements StackInterface {
+public class NoShowList implements StackInterface {
     private LinkedList<Patient> missedPatients;
 
     public NoShowList(LinkedList<Patient> missedPatients) {

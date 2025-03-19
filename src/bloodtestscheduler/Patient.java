@@ -4,16 +4,20 @@
  */
 package bloodtestscheduler;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author tombr
  */
-public abstract class Patient implements QueueInterface, Comparable<Patient>{
+public class Patient implements QueueInterface, Comparable<Patient>{
     private String name;
     private int age;
     private String GPDetails;
     private Priority priority;
     private boolean fromWard;
+    
+    private LinkedList<Patient> queue = new LinkedList<>();
 
     public Patient(String name, int age, String GPDetails, Priority Priority, boolean fromWard) {
         this.name = name;
@@ -38,7 +42,7 @@ public abstract class Patient implements QueueInterface, Comparable<Patient>{
     
     @Override
     public Priority getPriority() {
-        return priority;
+        return this.priority;
     }
     
     
@@ -47,10 +51,12 @@ public abstract class Patient implements QueueInterface, Comparable<Patient>{
     }
     
     @Override
-    public int compareTo(Patient other) {
-        return this.priority.compareTo(other.priority);
+    public int compareTo(Patient patient) {
+        return this.priority.compareTo(patient.priority);
     }
     
     @Override
-    public abstract void enqueue(Patient patient);
+    public void enqueue(Patient patient) {
+        queue.add(patient);
+    }
 }

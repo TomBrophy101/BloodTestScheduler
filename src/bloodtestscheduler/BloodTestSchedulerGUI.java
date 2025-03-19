@@ -20,10 +20,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
      */
     public BloodTestSchedulerGUI() {
         initComponents();
-        plist = new Patient[3];
-        count = -1;
-        patientNameTF.setVisible(false);
-        patientNameLBL.setVisible(false);
+        plist = new Patient[5];
+        count = 0;
+        
+    }
+    
+    private void updateQueueList(){
+        
     }
 
     /**
@@ -289,11 +292,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         boolean fromWard = wardRB.isSelected();
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
-        if(count < plist.length - 1){
-            plist[++count] = tempP;
+        if(count < plist.length){
+            plist[count++] = tempP;
         } else {
             JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
         }
+        
+        updateQueueList();
     }//GEN-LAST:event_addPatientBTNActionPerformed
 
     private void patientNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTFActionPerformed
