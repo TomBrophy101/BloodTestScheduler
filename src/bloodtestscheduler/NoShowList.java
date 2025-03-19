@@ -10,12 +10,35 @@ import java.util.LinkedList;
  *
  * @author tombr
  */
-public class NoShowList {
+public abstract class NoShowList implements StackInterface {
     private LinkedList<Patient> missedPatients;
 
     public NoShowList(LinkedList<Patient> missedPatients) {
         this.missedPatients = missedPatients;
     }
     
+    @Override
+    public void push(Patient patient){
+        missedPatients.addFirst(patient);
+    }
     
+    @Override
+    public Object pop(){
+        return missedPatients.isEmpty() ? null : missedPatients.removeFirst();
+    }
+    
+    @Override
+    public Object peek(){
+        return missedPatients.isEmpty() ? null : missedPatients.getFirst();
+    }
+    
+    @Override
+    public boolean isEmpty(){
+        return missedPatients.isEmpty();
+    }
+    
+    @Override
+    public int size(){
+        return missedPatients.size();
+    }
 }
