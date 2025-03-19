@@ -26,7 +26,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     }
     
     private void updateQueueList(){
+        DefaultListModel<String> listModel = new DefaultListModel<>();
         
+        for (int i = 0; i < count; i++){
+            listModel.addElement(plist[i].getName());
+        }
+        
+        queueLST.setModel(listModel);
     }
 
     /**
