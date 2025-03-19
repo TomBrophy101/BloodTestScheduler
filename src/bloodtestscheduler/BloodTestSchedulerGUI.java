@@ -142,9 +142,19 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
         nextPatientBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         nextPatientBTN.setText("Next Patient");
+        nextPatientBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nextPatientBTNActionPerformed(evt);
+            }
+        });
 
         NoShowListBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         NoShowListBTN.setText("No Show List");
+        NoShowListBTN.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NoShowListBTNActionPerformed(evt);
+            }
+        });
 
         exitBTN.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         exitBTN.setText("Exit");
@@ -156,11 +166,6 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(queueLST);
 
-        noShowLST.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         jScrollPane2.setViewportView(noShowLST);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -314,6 +319,14 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     private void wardRBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_wardRBActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_wardRBActionPerformed
+
+    private void NoShowListBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoShowListBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NoShowListBTNActionPerformed
+
+    private void nextPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientBTNActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_nextPatientBTNActionPerformed
 
     /**
      * @param args the command line arguments
