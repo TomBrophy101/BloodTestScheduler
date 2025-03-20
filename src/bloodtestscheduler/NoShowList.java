@@ -4,6 +4,7 @@
  */
 package bloodtestscheduler;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 
 /**
@@ -12,9 +13,9 @@ import java.util.LinkedList;
  */
 //This is the use of the Stack ADL.
 public class NoShowList implements StackInterface {
-    private LinkedList<Patient> missedPatients;
+    ArrayList<Patient> missedPatients;
 
-    public NoShowList(LinkedList<Patient> missedPatients) {
+    public NoShowList(ArrayList<Patient> missedPatients) {
         this.missedPatients = missedPatients;
     }
     
@@ -45,11 +46,15 @@ public class NoShowList implements StackInterface {
     
     @Override
     public String displayStack(){
-        StringBuilder sb = new StringBuilder("No-Show Patients:\n");
-        for (Patient p : missedPatients) {
-            sb.append(p.getName()).append("\n");
+        String empty = "";
+        if(!missedPatients.isEmpty()){
+            for(int i = 0; i < missedPatients.size(); i++) {
+                empty += missedPatients.get(i);
+            }
+            return empty;
+        } else {
+            return empty;
         }
-        return sb.toString();
     }
     
     @Override
