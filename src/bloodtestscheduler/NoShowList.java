@@ -57,9 +57,5 @@ public class NoShowList implements StackInterface {
         }
     }
     
-    @Override
-    public String emptyStack(){
-        missedPatients.clear();
-        return "No-show stack cleared";
-    }
+    
 }

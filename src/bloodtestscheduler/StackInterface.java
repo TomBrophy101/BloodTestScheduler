@@ -16,5 +16,4 @@ public interface StackInterface {
     public boolean isEmpty();
     public int size();
     public String displayStack();
-    public String emptyStack();
 }
