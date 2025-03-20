@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 //This is the use of the Stack ADL.
 public class NoShowList implements StackInterface {
+    //Create instance of missedPatients with arrayList
     ArrayList<Patient> missedPatients;
 
     public NoShowList(ArrayList<Patient> missedPatients) {
@@ -20,17 +21,25 @@ public class NoShowList implements StackInterface {
     
     @Override
     public void push(Patient patient){
-        missedPatients.addFirst(patient);
+        missedPatients.add(0, (Patient)patient);
     }
     
     @Override
     public Object pop(){
-        return missedPatients.isEmpty() ? null : missedPatients.removeFirst();
+        if(!missedPatients.isEmpty()){
+            return missedPatients.remove(0);
+        } else {
+            return null;
+        }
     }
     
     @Override
     public Object peek(){
-        return missedPatients.isEmpty() ? null : missedPatients.getFirst();
+        if(!missedPatients.isEmpty()){
+            return missedPatients.get(0);
+        } else {
+            return null;
+        }
     }
     
     @Override
