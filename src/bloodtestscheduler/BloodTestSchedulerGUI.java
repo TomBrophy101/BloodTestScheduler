@@ -39,6 +39,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         WardButtons.add(noWardRB);
     }
     
+    //This will update the Queue JList when a name is added.
     private void updateQueueList(){
         DefaultListModel<String> listModel = new DefaultListModel<>();
         
@@ -49,6 +50,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         queueLST.setModel(listModel);
     }
     
+    //This will reset the form fields when a name is added.
     private void resetFormFields(){
         patientNameTF.setText("");
         patientAgeTF.setText("");
@@ -321,8 +323,10 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         int age = Integer.parseInt(patientAgeTF.getText());
         String GPDetails = GPDetailsTF.getText();
         
+        //This is the default value for Priority
         Priority priority = Priority.Medium;
         
+        //This allows the user to select whatever Priority radio button they want to
         if(UrgentRB.isSelected()) {
             priority = Priority.Urgent;
         } else if (MediumRB.isSelected()) {
@@ -331,8 +335,10 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             priority = Priority.Low;
         }
         
+        //This is the default value for ward
         boolean fromWard = false;
         
+        //This allows the user to select whatever Ward radio button they want to
         if(wardRB.isSelected()) {
             fromWard = true;
         } else if (noWardRB.isSelected()) {
