@@ -14,10 +14,12 @@ public class BloodTestSchedulerApp {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        NoShowList noShowList = new NoShowList();
-        noShowList.push("Tom");
+        Patient temp = new Patient("Tom", 23, "Dr Holmes", 2, true);
+        NoShowList missedPatients = new NoShowList();
+        //missedPatients.push();
         BloodTestSchedulerGUI myGUI = new BloodTestSchedulerGUI();
         myGUI.setVisible(true);
     }
     
 }
+ 

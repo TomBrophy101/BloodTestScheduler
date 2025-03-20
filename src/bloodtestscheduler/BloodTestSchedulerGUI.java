@@ -348,7 +348,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             fromWard = false;
         }
         
-        Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
+        Patient tempP = new Patient(name, age, GPDetails, /*priority*/, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
             updateQueueList();
