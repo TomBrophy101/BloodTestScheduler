@@ -41,27 +41,27 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     
     //This will update the Queue JList when a name is added.
     private void updateQueueList(){
-        DefaultListModel<String> listModel = new DefaultListModel<>();
+        DefaultListModel<String> patientListModel = new DefaultListModel<>();
         
         for (int i = 0; i < count; i++){
-            listModel.addElement(plist[i].getName());
+            patientListModel.addElement(plist[i].getName());
             
             
         }
         
-        queueLST.setModel(listModel);
+        queueLST.setModel(patientListModel);
     }
     
     private void updateNoShowList() {
-        DefaultListModel<String> listModelTwo = new DefaultListModel<>();
+        DefaultListModel<String> noShowListModel = new DefaultListModel<>();
         
         for (int i = 0; i < count; i++){
-            listModelTwo.addElement(plist[i].getName());
+            noShowListModel.addElement(plist[i].getName());
             
             
         }
         
-        noShowLST.setModel(listModelTwo);
+        noShowLST.setModel(noShowListModel);
     }
     
     //This will reset the form fields when a name is added.
@@ -363,7 +363,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
-            updateNoShowList();
+            updateQueueList();
             
             resetFormFields();
         } else {
@@ -412,7 +412,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
-            updateQueueList();
+            updateNoShowList();
             
             resetFormFields();
         } else {
