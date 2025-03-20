@@ -49,7 +49,7 @@ public class NoShowList implements StackInterface {
         String empty = "";
         if(!missedPatients.isEmpty()){
             for(int i = 0; i < missedPatients.size(); i++) {
-                empty += missedPatients.get(i);
+                empty += missedPatients.get(i) + "\n";
             }
             return empty;
         } else {
