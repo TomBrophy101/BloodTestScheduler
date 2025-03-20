@@ -52,6 +52,7 @@ public class NoShowList implements StackInterface {
             }
             return empty;
         } else {
+            empty = "Stack is empty";
             return empty;
         }
     }
