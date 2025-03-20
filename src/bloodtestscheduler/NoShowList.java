@@ -10,6 +10,7 @@ import java.util.LinkedList;
  *
  * @author tombr
  */
+//This is the use of the Stack ADL.
 public class NoShowList implements StackInterface {
     private LinkedList<Patient> missedPatients;
 

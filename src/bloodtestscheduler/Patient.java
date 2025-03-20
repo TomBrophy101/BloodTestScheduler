@@ -10,6 +10,7 @@ import java.util.LinkedList;
  *
  * @author tombr
  */
+//This is the use of the Queue ADL.
 public class Patient implements QueueInterface, Comparable<Patient>{
     private String name;
     private int age;
