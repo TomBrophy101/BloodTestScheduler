@@ -48,6 +48,15 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         queueLST.setModel(listModel);
     }
+    
+    private void resetFormFields(){
+        patientNameTF.setText("");
+        patientAgeTF.setText("");
+        GPDetailsTF.setText("");
+        
+        PriorityButtons.clearSelection();
+        WardButtons.clearSelection();
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -334,6 +343,8 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         if(count < plist.length){
             plist[count++] = tempP;
             updateQueueList();
+            
+            resetFormFields();
         } else {
             JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
         }
