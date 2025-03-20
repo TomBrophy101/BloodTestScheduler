@@ -327,15 +327,15 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         String GPDetails = GPDetailsTF.getText();
         
         //This is the default value for Priority
-        Priority priority = Priority.Medium;
+        int priority = 1;
         
         //This allows the user to select whatever Priority radio button they want to
         if(UrgentRB.isSelected()) {
-            priority = Priority.Urgent;
+            priority = 2;
         } else if (MediumRB.isSelected()) {
-            priority = Priority.Medium;
+            priority = 1;
         } else if (LowRB.isSelected()) {
-            priority = Priority.Low;
+            priority = 0;
         }
         
         //This is the default value for ward
@@ -348,7 +348,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             fromWard = false;
         }
         
-        Patient tempP = new Patient(name, age, GPDetails, /*priority*/, fromWard);
+        Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
             updateQueueList();
