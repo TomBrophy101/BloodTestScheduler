@@ -45,6 +45,9 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         for (int i = 0; i < count; i++){
             listModel.addElement(plist[i].getName());
+            listModel.addElement(String.valueOf(plist[i].getAge()));
+            listModel.addElement(plist[i].getGPDetails());
+            
         }
         
         queueLST.setModel(listModel);

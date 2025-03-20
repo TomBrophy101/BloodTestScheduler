@@ -42,19 +42,21 @@ public class MyBloodTestScheduler implements QueueInterface {
         return "Tom Brophy";
     }
     
+    public int getAge(){
+        return 23;
+    }
+    
     public String getGPDetails(){
         return "Dr Holmes, Luciana";
     }
     
     
-    public int getAge(){
-        return 23;
-    }
-    
     @Override
     public Priority getPriority(){
         return Priority.Urgent;
     }
+    
+    
     
     
     @Override
