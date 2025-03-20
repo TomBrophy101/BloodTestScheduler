@@ -4,8 +4,10 @@
  */
 package bloodtestscheduler;
 
+import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -15,6 +17,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     Patient plist[];
     private int count;
     private DefaultListModel<String> queueModel;
+    private ButtonGroup PriorityButtons;
     /**
      * Creates new form BloodTestSchedulerGUI
      */
@@ -23,6 +26,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         plist = new Patient[5];
         count = 0;
         
+        PriorityButtons = new ButtonGroup();
+        
+        PriorityButtons.add(UrgentRB);
+        PriorityButtons.add(MediumRB);
+        PriorityButtons.add(LowRB);
     }
     
     private void updateQueueList(){
@@ -300,16 +308,25 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         Priority priority = Priority.Medium;
         
+        if(UrgentRB.isSelected()) {
+            priority = Priority.Urgent;
+        } else if (MediumRB.isSelected()) {
+            priority = Priority.Medium;
+        } else if (LowRB.isSelected()) {
+            priority = Priority.Low;
+        }
+        
         boolean fromWard = wardRB.isSelected();
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
+            updateQueueList();
         } else {
             JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        updateQueueList();
+        
     }//GEN-LAST:event_addPatientBTNActionPerformed
 
     private void patientNameTFActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patientNameTFActionPerformed
