@@ -11,14 +11,14 @@ import java.util.LinkedList;
  * @author tombr
  */
 //This is the use of the Queue ADL.
-public class Patient implements QueueInterface, Comparable<Patient>{
+public abstract class Patient implements QueueInterface, Comparable<Patient>{
     private String name;
     private int age;
     private String GPDetails;
     private Priority priority;
     private boolean fromWard;
     
-    private LinkedList<Patient> queue = new LinkedList<>();
+    private LinkedList<String> queue = new LinkedList<>();
 
     public Patient(String name, int age, String GPDetails, Priority Priority, boolean fromWard) {
         this.name = name;
@@ -51,13 +51,20 @@ public class Patient implements QueueInterface, Comparable<Patient>{
         return fromWard;
     }
     
+    
+    
+    
     @Override
-    public int compareTo(Patient patient) {
-        return this.priority.compareTo(patient.priority);
+    public void enqueue(String patient) {
+        queue.add(patient);
     }
     
     @Override
-    public void enqueue(Patient patient) {
-        queue.add(patient);
+    public Object dequeue() {
+        if (!queue.isEmpty()) {
+            return queue.remove(0);
+        } else {
+            return null;
+        }
     }
 }

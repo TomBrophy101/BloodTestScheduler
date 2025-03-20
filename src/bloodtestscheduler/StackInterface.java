@@ -9,7 +9,7 @@ package bloodtestscheduler;
  * @author tombr
  */
 public interface StackInterface {
-    public void push(Patient patient);
+    public void push(String patient);
     public Object pop();
     public Object peek();
     

@@ -11,5 +11,10 @@ package bloodtestscheduler;
 public interface QueueInterface {
     
     public Priority getPriority();
-    public void enqueue(Patient patient);
+    public void enqueue(String patient);
+    public Object dequeue();
+    public boolean isEmpty();
+    public Object peek();
+    public int size();
+    public Object frontElement();
 }

@@ -4,38 +4,28 @@
  */
 package bloodtestscheduler;
 
-import java.util.PriorityQueue;
+import java.util.ArrayList;
 
 /**
  *
  * @author tombr
  */
-public class MyBloodTestScheduler implements QueueInterface {
+public abstract class MyBloodTestScheduler implements QueueInterface {
     
-    private PriorityQueue<Patient> patientQueue;
+     ArrayList<String> patientQueue;
 
     public MyBloodTestScheduler() {
-        patientQueue = new PriorityQueue<>();
+        patientQueue = new ArrayList<>();
     }
     
-    public void addPatient(Patient patient) {
+    public void addPatient(String patient) {
         patientQueue.add(patient);
-        System.out.println("Added patient: " + patient.getName() + " with priority " + patient.getPriority());
     }
     
-    public Patient getNextPatient() {
-        return patientQueue.poll();
-    }
+    
     
     public String displayQueue(){
-        if(patientQueue.isEmpty()) {
-            return "No patients in queue";
-        }
-        StringBuilder sb = new StringBuilder("Current PatientQueue:\n");
-        for (Patient p : patientQueue) {
-            sb.append(p.getName()).append(" - ").append(p.getPriority()).append(" - ").append(p.getAge()).append("\n");
-        }
-        return sb.toString();
+        return patientQueue.toString();
     }
     
     public String getName(){
@@ -56,13 +46,16 @@ public class MyBloodTestScheduler implements QueueInterface {
         return Priority.Urgent;
     }
     
-    
-    
+    @Override
+    public boolean isEmpty() {
+        return patientQueue.isEmpty();
+    }
     
     @Override
-    public void enqueue(Patient patient){
+    public void enqueue(String patient) {
         patientQueue.add(patient);
     }
+    
     
     
 }

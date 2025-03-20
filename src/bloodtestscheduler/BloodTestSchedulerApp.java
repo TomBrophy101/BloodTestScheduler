@@ -12,17 +12,10 @@ public class BloodTestSchedulerApp {
     /**
      * @param args the command line arguments
      */
-    private MyBloodTestScheduler scheduler;
-    private NoShowList noShowList;
-
-    public BloodTestSchedulerApp(MyBloodTestScheduler scheduler, NoShowList noShowList) {
-        this.scheduler = scheduler;
-        this.noShowList = noShowList;
-    }
-    
-    
     public static void main(String[] args) {
         // TODO code application logic here
+        NoShowList noShowList = new NoShowList();
+        noShowList.push("Tom");
         BloodTestSchedulerGUI myGUI = new BloodTestSchedulerGUI();
         myGUI.setVisible(true);
     }
