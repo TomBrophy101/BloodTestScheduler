@@ -370,6 +370,42 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
 
     private void NoShowListBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoShowListBTNActionPerformed
         // TODO add your handling code here:
+        String name = patientNameTF.getText().trim();
+        int age = Integer.parseInt(patientAgeTF.getText());
+        String GPDetails = GPDetailsTF.getText();
+        
+        //This is the default value for Priority
+        int priority = 1;
+        
+        //This allows the user to select whatever Priority radio button they want to
+        if(UrgentRB.isSelected()) {
+            priority = 2;
+        } else if (MediumRB.isSelected()) {
+            priority = 1;
+        } else if (LowRB.isSelected()) {
+            priority = 0;
+        }
+        
+        //This is the default value for ward
+        boolean fromWard = false;
+        
+        //This allows the user to select whatever Ward radio button they want to
+        if(wardRB.isSelected()) {
+            fromWard = true;
+        } else if (noWardRB.isSelected()) {
+            fromWard = false;
+        }
+        
+        Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
+        if(count < plist.length){
+            plist[count++] = tempP;
+            updateQueueList();
+            
+            resetFormFields();
+        } else {
+            JOptionPane.showMessageDialog(this, "No Show List is full!", "Error", JOptionPane.ERROR_MESSAGE);
+        }
+        
     }//GEN-LAST:event_NoShowListBTNActionPerformed
 
     private void nextPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientBTNActionPerformed
