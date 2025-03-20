@@ -18,6 +18,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     private int count;
     private DefaultListModel<String> queueModel;
     private ButtonGroup PriorityButtons;
+    private ButtonGroup WardButtons;
     /**
      * Creates new form BloodTestSchedulerGUI
      */
@@ -31,6 +32,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         PriorityButtons.add(UrgentRB);
         PriorityButtons.add(MediumRB);
         PriorityButtons.add(LowRB);
+        
+        WardButtons = new ButtonGroup();
+        
+        WardButtons.add(wardRB);
+        WardButtons.add(noWardRB);
     }
     
     private void updateQueueList(){
@@ -316,7 +322,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             priority = Priority.Low;
         }
         
-        boolean fromWard = wardRB.isSelected();
+        boolean fromWard = false;
+        
+        if(wardRB.isSelected()) {
+            fromWard = true;
+        } else if (noWardRB.isSelected()) {
+            fromWard = false;
+        }
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
