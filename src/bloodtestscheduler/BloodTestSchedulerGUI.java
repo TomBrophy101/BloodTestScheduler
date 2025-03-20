@@ -53,15 +53,15 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     }
     
     private void updateNoShowList() {
-        DefaultListModel<String> listModel = new DefaultListModel<>();
+        DefaultListModel<String> listModelTwo = new DefaultListModel<>();
         
         for (int i = 0; i < count; i++){
-            listModel.addElement(plist[i].getName());
+            listModelTwo.addElement(plist[i].getName());
             
             
         }
         
-        noShowLST.setModel(listModel);
+        noShowLST.setModel(listModelTwo);
     }
     
     //This will reset the form fields when a name is added.
