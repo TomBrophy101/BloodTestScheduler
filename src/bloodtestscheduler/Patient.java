@@ -52,7 +52,7 @@ public class Patient{
     
     @Override
     public String toString(){
-        return "(Name: " + name + ", Age: " + age + ", GPDetails: " + GPDetails + ", Priority: " + priority + ", From Ward: " + fromWard + ")";
+        return "Name: " + name + ", Age: " + age + ", GPDetails: " + GPDetails + ", Priority: " + priority + ", From Ward: " + fromWard;
     }
     
     /*@Override
