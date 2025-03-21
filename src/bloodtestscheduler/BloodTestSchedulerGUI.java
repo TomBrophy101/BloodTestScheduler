@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
 public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     Patient plist[];
     private int count;
-    private DefaultListModel<String> queueModel = new DefaultListModel<>();;
-    private DefaultListModel<String> noShowModel = new DefaultListModel<>();;
+    private DefaultListModel<String> queueModel = new DefaultListModel<>();
+    private DefaultListModel<String> noShowModel = new DefaultListModel<>();
     private ButtonGroup PriorityButtons;
     private ButtonGroup WardButtons;
     /**
