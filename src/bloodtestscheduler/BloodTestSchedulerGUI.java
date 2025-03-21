@@ -16,8 +16,8 @@ import javax.swing.JOptionPane;
 public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     Patient plist[];
     private int count;
-    private DefaultListModel<String> queueModel;
-    private DefaultListModel<String> noShowModel;
+    private DefaultListModel<String> queueModel = new DefaultListModel<>();;
+    private DefaultListModel<String> noShowModel = new DefaultListModel<>();;
     private ButtonGroup PriorityButtons;
     private ButtonGroup WardButtons;
     /**
@@ -30,9 +30,12 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         queueModel = new DefaultListModel<>();
         queueLST.setModel(queueModel);
-        
+         
         noShowModel = new DefaultListModel<>();
         noShowLST.setModel(noShowModel);
+         
+        populateQueueList();
+        populateNoShowList();
         
         PriorityButtons = new ButtonGroup();
         
@@ -47,29 +50,39 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     }
     
     
+    private void populateQueueList(){
+         
+    }
+     
+    private void populateNoShowList(){
+         
+    }
     
+     
     //This will update the Queue JList when a name is added.
     private void updateQueueList(){
         
+        DefaultListModel<String> queueModel = new DefaultListModel<>();
+        
+        queueModel.clear();
+        
         for (int i = 0; i < count; i++){
             queueModel.addElement(plist[i].getName());
-            
-            
         }
         
-        
+        queueLST.setModel(queueModel);
     }
     
     private void updateNoShowList() {
+        DefaultListModel<String> noShowModel = new DefaultListModel<>();
         
+        noShowModel.clear();
         
         for (int i = 0; i < count; i++){
             noShowModel.addElement(plist[i].getName());
-            
-            
         }
         
-        
+        noShowLST.setModel(noShowModel);
     }
     
     //This will reset the form fields when a name is added.
@@ -377,7 +390,6 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         if(count < plist.length){
             plist[count++] = tempP;
             updateQueueList();
-            
             resetFormFields();
         } else {
             JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
