@@ -17,6 +17,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     Patient plist[];
     private int count;
     private DefaultListModel<String> queueModel;
+    private DefaultListModel<String> noShowModel;
     private ButtonGroup PriorityButtons;
     private ButtonGroup WardButtons;
     /**
@@ -26,6 +27,13 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         initComponents();
         plist = new Patient[5];
         count = 0;
+        
+        queueLST.setModel(queueModel);
+        
+        noShowLST.setModel(noShowModel);
+        
+        populateQueueList();
+        populateNoShowList();
         
         PriorityButtons = new ButtonGroup();
         
@@ -37,6 +45,14 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         WardButtons.add(wardRB);
         WardButtons.add(noWardRB);
+    }
+    
+    private void populateQueueList(){
+        
+    }
+    
+    private void populateNoShowList(){
+        
     }
     
     //This will update the Queue JList when a name is added.
