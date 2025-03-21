@@ -96,4 +96,9 @@ public class MyBloodTestScheduler implements QueueInterface {
         }
         return null;
     }
+    
+    @Override
+    public String toString(){
+        return "Name: " + getName() + ", Age: " + getAge() + ", GPDetails: " + getGPDetails() + ", Priority: " + getPriority() + ", From Ward: " + isFromWard();
+    }
 }

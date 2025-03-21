@@ -66,8 +66,9 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         queueModel.clear();
         
         for (int i = 0; i < count; i++){
-            String formattedPatient = "Name: ";
+            String formattedPatient = "Name: " + plist[i].getName();
             queueModel.addElement(formattedPatient);
+            
         }
         
         queueLST.setModel(queueModel);
@@ -77,7 +78,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         noShowModel.clear();
         
         for (int i = 0; i < count; i++){
-            String formattedPatient = "Name: ";
+            String formattedPatient = "Name: " + plist[i].getName();
             noShowModel.addElement(formattedPatient);
         }
         
@@ -409,8 +410,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
-            plist[count] = tempP;
-            count++;
+            plist[count++] = tempP;
             updateQueueList();
             resetFormFields();
         } else {
@@ -485,8 +485,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
-            plist[count] = tempP;
-            count++;
+            plist[count++] = tempP;
             updateNoShowList();
             resetFormFields();
         } else {

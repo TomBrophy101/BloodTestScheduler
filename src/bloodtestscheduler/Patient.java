@@ -50,10 +50,7 @@ public class Patient{
         return fromWard;
     }
     
-    @Override
-    public String toString(){
-        return "Name: " + name + ", Age: " + age + ", GPDetails: " + GPDetails + ", Priority: " + priority + ", From Ward: " + fromWard;
-    }
+    
     
     /*
     public Object frontElement() {
