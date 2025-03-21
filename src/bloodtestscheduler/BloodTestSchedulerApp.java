@@ -20,8 +20,15 @@ public class BloodTestSchedulerApp {
         missedPatients.push(temp1);
         missedPatients.push(temp2);
         
+        MyBloodTestScheduler queuePatients = new MyBloodTestScheduler();
+        queuePatients.enqueue("Tom", 23, "Dr Holmes", 2, true);
+        
+        
+        
         System.out.println("\nNo Show Patients:");
         System.out.println(missedPatients.displayStack());
+        System.out.println("\nQueue Patients:");
+        System.out.println(queuePatients.displayQueue());
         BloodTestSchedulerGUI myGUI = new BloodTestSchedulerGUI();
         myGUI.setVisible(true);
     }

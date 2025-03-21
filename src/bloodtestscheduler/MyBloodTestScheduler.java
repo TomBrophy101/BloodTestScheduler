@@ -10,7 +10,7 @@ import java.util.ArrayList;
  *
  * @author tombr
  */
-public abstract class MyBloodTestScheduler implements QueueInterface {
+public class MyBloodTestScheduler implements QueueInterface {
     
     ArrayList<Patient> patientQueue;
 
