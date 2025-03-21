@@ -29,6 +29,8 @@ public class BloodTestSchedulerApp {
         System.out.println(missedPatients.displayStack());
         System.out.println("\nQueue Patients:");
         System.out.println(queuePatients.displayQueue());
+        
+        
         BloodTestSchedulerGUI myGUI = new BloodTestSchedulerGUI();
         myGUI.setVisible(true);
     }

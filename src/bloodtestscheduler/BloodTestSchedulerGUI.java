@@ -496,7 +496,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
         }
         
-        updateNoShowList(); // Refresh No-Show JList
+        updateNoShowList();
     }//GEN-LAST:event_NoShowListBTNActionPerformed
 
     private void nextPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientBTNActionPerformed
