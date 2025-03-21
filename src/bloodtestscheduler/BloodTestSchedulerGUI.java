@@ -47,13 +47,28 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         WardButtons.add(noWardRB);
     }
     
+    
+    private String formatPatient(Patient p) {
+        return p.getName() + " (Age: " + p.getAge() + ", Priority: " + p.getPriority() + ", Ward: " + (p.isFromWard() ? "Yes" : "No") + ")";
+    }
+    
+    
     private void populateQueueList(){
+        Patient temp = new Patient("Tom Brophy", 23, "Dr Holmes, Luciana", 2, true);
+        queueModel.addElement(formatPatient(temp));
         
     }
     
-    private void populateNoShowList(){
-        
+    private String formatNoShowList(Patient p) {
+        return p.getName() + " (Age: " + p.getAge() + ", Priority: " + p.getPriority() + ", Ward: " + (p.isFromWard() ? "Yes" : "No") + ")";
     }
+    
+    private void populateNoShowList(){
+        Patient temp = new Patient("Jordan Buckley", 26, "Dr Watson", 1, false);
+        noShowModel.addElement(formatNoShowList(temp));
+    }
+    
+    
     
     //This will update the Queue JList when a name is added.
     private void updateQueueList(){

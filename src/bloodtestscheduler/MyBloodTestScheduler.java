@@ -12,7 +12,7 @@ import java.util.ArrayList;
  */
 public abstract class MyBloodTestScheduler implements QueueInterface {
     
-     ArrayList<String> patientQueue;
+    ArrayList<String> patientQueue;
 
     public MyBloodTestScheduler() {
         patientQueue = new ArrayList<>();
@@ -21,8 +21,6 @@ public abstract class MyBloodTestScheduler implements QueueInterface {
     public void addPatient(String patient) {
         patientQueue.add(patient);
     }
-    
-    
     
     public String displayQueue(){
         return patientQueue.toString();
@@ -42,8 +40,8 @@ public abstract class MyBloodTestScheduler implements QueueInterface {
     
     
     @Override
-    public Priority getPriority(){
-        return Priority.Urgent;
+    public int getPriority(){
+        return 2;
     }
     
     @Override

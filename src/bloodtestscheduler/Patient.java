@@ -50,6 +50,11 @@ public class Patient{
         return fromWard;
     }
     
+    @Override
+    public String toString(){
+        return name + " (Age: " + age + ", Priority: " + priority + ")";
+    }
+    
     /*@Override
     public Object frontElement() {
         

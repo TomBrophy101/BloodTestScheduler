@@ -17,6 +17,7 @@ public class BloodTestSchedulerApp {
         Patient temp = new Patient("Tom", 23, "Dr Holmes", 2, true);
         NoShowList missedPatients = new NoShowList();
         missedPatients.push(temp);
+        
         BloodTestSchedulerGUI myGUI = new BloodTestSchedulerGUI();
         myGUI.setVisible(true);
     }
