@@ -28,8 +28,10 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         plist = new Patient[5];
         count = 0;
         
+        queueModel = new DefaultListModel<>();
         queueLST.setModel(queueModel);
         
+        noShowModel = new DefaultListModel<>();
         noShowLST.setModel(noShowModel);
         
         PriorityButtons = new ButtonGroup();
@@ -48,27 +50,26 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     
     //This will update the Queue JList when a name is added.
     private void updateQueueList(){
-        DefaultListModel<String> patientListModel = new DefaultListModel<>();
         
         for (int i = 0; i < count; i++){
-            patientListModel.addElement(plist[i].getName());
+            queueModel.addElement(plist[i].getName());
             
             
         }
         
-        queueLST.setModel(patientListModel);
+        
     }
     
     private void updateNoShowList() {
-        DefaultListModel<String> noShowListModel = new DefaultListModel<>();
+        
         
         for (int i = 0; i < count; i++){
-            noShowListModel.addElement(plist[i].getName());
+            noShowModel.addElement(plist[i].getName());
             
             
         }
         
-        noShowLST.setModel(noShowListModel);
+        
     }
     
     //This will reset the form fields when a name is added.
@@ -343,7 +344,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = patientNameTF.getText().trim();
         int age = Integer.parseInt(patientAgeTF.getText());
-        String GPDetails = GPDetailsTF.getText();
+        String GPDetails = GPDetailsTF.getText().trim();
         
         //This is the default value for Priority
         int priority = 1;
@@ -365,6 +366,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             fromWard = true;
         } else if (noWardRB.isSelected()) {
             fromWard = false;
+        }
+        
+        if(name.isEmpty() || GPDetails.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in the details", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
@@ -392,7 +398,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
         // TODO add your handling code here:
         String name = patientNameTF.getText().trim();
         int age = Integer.parseInt(patientAgeTF.getText());
-        String GPDetails = GPDetailsTF.getText();
+        String GPDetails = GPDetailsTF.getText().trim();
         
         //This is the default value for Priority
         int priority = 1;
@@ -414,6 +420,11 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             fromWard = true;
         } else if (noWardRB.isSelected()) {
             fromWard = false;
+        }
+        
+        if(name.isEmpty() || GPDetails.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in the details", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
         }
         
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
