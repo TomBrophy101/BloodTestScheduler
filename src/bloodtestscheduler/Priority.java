@@ -8,8 +8,8 @@ package bloodtestscheduler;
  *
  * @author tombr
  */
-public enum Priority {
+/*public enum Priority {
     Urgent,
     Medium,
     Low
-}
+}*/
