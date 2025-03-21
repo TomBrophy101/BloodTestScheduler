@@ -62,7 +62,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     //This will update the Queue JList when a name is added.
     private void updateQueueList(){
         
-        DefaultListModel<String> queueModel = new DefaultListModel<>();
+        
         
         queueModel.clear();
         
@@ -74,7 +74,7 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     }
     
     private void updateNoShowList() {
-        DefaultListModel<String> noShowModel = new DefaultListModel<>();
+        
         
         noShowModel.clear();
         

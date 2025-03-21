@@ -60,9 +60,10 @@ public class Patient{
         
     }*/
     
-    /*@Override
-    public void enqueue(String patient) {
-        queue.add(patient);
+    /*
+    public void enqueue(String name, int age, String GPDetails, int priority, boolean fromWard) {
+       Patient newPatient = new Patient("Tom Brophy", 23, "Dr Holmes", 2, true);
+       patientQueue.add(newPatient);
     }*/
     
     /*@Override
