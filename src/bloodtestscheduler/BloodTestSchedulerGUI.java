@@ -431,8 +431,35 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
     private void NoShowListBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NoShowListBTNActionPerformed
         // TODO add your handling code here:
         String name = patientNameTF.getText().trim();
-        int age = Integer.parseInt(patientAgeTF.getText());
+        
+        if(name.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please fill in a name for the Patient", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        String ageInput = patientAgeTF.getText().trim();
+        
+        if (ageInput.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter a valid age", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        
+        for (int i = 0; i < ageInput.length(); i++) {
+            if (!Character.isDigit(ageInput.charAt(i))) {
+                // If a non-digit character is found, show an error message
+                JOptionPane.showMessageDialog(this, "Please enter a valid number for age", "Input Error", JOptionPane.ERROR_MESSAGE);
+                return;
+            }
+        }
+        
+        int age = Integer.parseInt(ageInput);
+        
         String GPDetails = GPDetailsTF.getText().trim();
+        
+        if (GPDetails.isEmpty()) {
+            JOptionPane.showMessageDialog(this, "Please enter GP details", "Input Error", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         
         //This is the default value for Priority
         int priority = 1;
@@ -456,21 +483,14 @@ public class BloodTestSchedulerGUI extends javax.swing.JFrame {
             fromWard = false;
         }
         
-        if(name.isEmpty() || GPDetails.isEmpty()) {
-            JOptionPane.showMessageDialog(this, "Please fill in the details", "Input Error", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        
         Patient tempP = new Patient(name, age, GPDetails, priority, fromWard);
         if(count < plist.length){
             plist[count++] = tempP;
             updateNoShowList();
-            
             resetFormFields();
         } else {
-            JOptionPane.showMessageDialog(this, "No Show List is full!", "Error", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, "Queue is full!", "Error", JOptionPane.ERROR_MESSAGE);
         }
-        
     }//GEN-LAST:event_NoShowListBTNActionPerformed
 
     private void nextPatientBTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nextPatientBTNActionPerformed
