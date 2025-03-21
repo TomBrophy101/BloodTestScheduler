@@ -25,7 +25,7 @@ public class MyBloodTestScheduler implements QueueInterface {
     public String displayQueue(){
         StringBuilder sb = new StringBuilder();
         for(Patient p : patientQueue) {
-            sb.append(p.getName()).append(", ").append(p.getAge()).append(", ").append(p.getGPDetails()).append("\n");
+            sb.append(p.getName()).append(", ").append(p.getAge()).append(", ").append(p.getGPDetails()).append(", ").append(p.getPriority()).append(", ").append(p.isFromWard()).append("\n");
         }
         return sb.toString();
     }
@@ -46,6 +46,10 @@ public class MyBloodTestScheduler implements QueueInterface {
     @Override
     public int getPriority(){
         return 2;
+    }
+    
+    public boolean isFromWard(){
+        return true;
     }
     
     @Override

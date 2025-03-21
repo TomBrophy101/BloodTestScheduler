@@ -21,7 +21,7 @@ public class BloodTestSchedulerApp {
         missedPatients.push(temp2);
         
         MyBloodTestScheduler queuePatients = new MyBloodTestScheduler();
-        queuePatients.enqueue("Tom", 23, "Dr Holmes", 2, true);
+        queuePatients.enqueue("Nisa", 21, "Dr House", 0, true);
         
         
         
