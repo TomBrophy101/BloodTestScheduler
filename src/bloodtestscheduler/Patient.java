@@ -55,9 +55,9 @@ public class Patient{
         return "Name: " + name + ", Age: " + age + ", GPDetails: " + GPDetails + ", Priority: " + priority + ", From Ward: " + fromWard;
     }
     
-    /*@Override
+    /*
     public Object frontElement() {
-        
+        return 
     }*/
     
     /*

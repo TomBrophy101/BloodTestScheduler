@@ -25,7 +25,7 @@ public class MyBloodTestScheduler implements QueueInterface {
     public String displayQueue(){
         StringBuilder sb = new StringBuilder();
         for(Patient p : patientQueue) {
-            sb.append(p.getName()).append(", ").append(p.getAge()).append(", ").append(p.getGPDetails()).append(", ").append(p.getPriority()).append(", ").append(p.isFromWard()).append("\n");
+            sb.append("Name: ").append(p.getName()).append(", Age: ").append(p.getAge()).append(", GPDetails: ").append(p.getGPDetails()).append(", Priority: ").append(p.getPriority()).append(", From Ward: ").append(p.isFromWard()).append("\n");
         }
         return sb.toString();
     }
